@@ -9,10 +9,14 @@ const logout = document.getElementById("logout")
 
 // [! Creating and Validating newly Joined Users.
 let userName
-if (localStorage.getItem("user")) {
+
+if (localStorage.getItem("user") != null) {
   userName = localStorage.getItem("user")
 } else {
   userName = prompt("Username : ")
+  if (userName == "" || userName == null)
+    userName = `tempChats${Math.round(Math.random() * 1000)}`
+
   localStorage.setItem("user", userName)
 }
 socket.emit("user", userName)
@@ -35,6 +39,7 @@ logout.addEventListener("click", () => {
 // [! Sending Message to the Back-End
 submitButton.addEventListener("click", (e) => {
   e.preventDefault()
+  if (textField.value == "") return alert("Type before you send a message!")
   socket.emit("click", textField.value)
   textField.value = ""
 })
