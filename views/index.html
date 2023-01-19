@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TempChats - Anonymous Conversation</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+  </head>
+  <body>
+    <!-- All the Active Joined Users's Message will receive from here -->
+    <ul id="active"></ul>
+
+    <div id="center" role="center">
+      <!-- Message Container -->
+      <ul id="message-container"></ul>
+
+      <form action="">
+        <!-- Emoji Slot -->
+
+        <div id="emoji">
+          <ul id="love">
+            🤍
+          </ul>
+          <ul id="smile">
+            😊
+          </ul>
+          <ul id="laugh">
+            😂
+          </ul>
+          <ul id="wow">
+            😲
+          </ul>
+          <ul id="cry">
+            😭
+          </ul>
+          <ul id="angry">
+            😡
+          </ul>
+        </div>
+
+        <!-- Text/Message Input Field -->
+        <input type="text" id="text" />
+
+        <!-- Text/Message Submitter -->
+        <button id="click">🗯</button>
+
+        <!-- __break__ -->
+        <p></p>
+        <!-- __break__ -->
+
+        <!-- User Logout -->
+        <button id="logout"></button>
+      </form>
+    </div>
+
+    <!-- Initializing socket.io in the front page -->
+    <script src="socket.io/socket.io.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="javascripts/script.js"></script>
+  </body>
+</html>
